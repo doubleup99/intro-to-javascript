@@ -1,1 +1,3 @@
-alert('Welcome to JS');
+// var name = "Mike";
+
+console.log(name);

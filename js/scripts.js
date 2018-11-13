@@ -1,4 +1,5 @@
 // var name = "ben";
+// console.log("mike");
 // "ben" is string as it is in quotes
 // number
 // var lukynumber = 32;

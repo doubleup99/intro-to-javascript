@@ -97,19 +97,19 @@
 // const num2 = +prompt("Give me a second number",10);
 // alert(num1 + num2);
 
-const firstName = "Ben";
-
-if(firstName === "Jacob"){
-  //if condition is true then this runs
-  // Indent within curly braces
-  console.log("Your name is Jacob");
-}else if(firstName === "Ben"){
-  // if second condition is met this runs
-  console.log("Your name is Ben");
-}else{
-  // if neither are true this runs
-  console.log("your name is not ben or jacob");
-}
+// const firstName = "Ben";
+//
+// if(firstName === "Jacob"){
+//   //if condition is true then this runs
+//   // Indent within curly braces
+//   console.log("Your name is Jacob");
+// }else if(firstName === "Ben"){
+//   // if second condition is met this runs
+//   console.log("Your name is Ben");
+// }else{
+//   // if neither are true this runs
+//   console.log("your name is not ben or jacob");
+// }
 // and statement: both have to be true
 // if (true && true){
 //   console.log("Great success");
@@ -160,22 +160,61 @@ if(firstName === "Jacob"){
  //   default :
  //    console.log("We don't know that superhero");
  // }
+ //
+ // const age = confirm("Are you over 18");
+ //
+ // if(age){
+ //   const under80 = confirm("Are you less than 80");
+ //   if(under80){
+ //     const movieLike = confirm("Do you like Star Wars");
+ //     if(movieLike){
+ //       alert("You have great taste in movies");
+ //     }
+ //   }else if(!under80){
+ //     const fruitLikes = confirm("Do you like prunes");
+ //     if(fruitLikes){
+ //       alert("Prunes are great");
+ //     }
+ //   }
+ // }else{
+ //   alert("You are not old enough");
+ // }
 
- const age = confirm("Are you over 18");
+ const username = prompt("What is your name");
+ const favColor = prompt("What is your favorite color?","red, yellow, orange, green, blue, pink, purple, black, white, or grey");
 
- if(age){
-   const under80 = confirm("Are you less than 80");
-   if(under80){
-     const movieLike = confirm("Do you like Star Wars");
-     if(movieLike){
-       alert("You have great taste in movies");
-     }
-   }else if(!under80){
-     const fruitLikes = confirm("Do you like prunes");
-     if(fruitLikes){
-       alert("Prunes are great");
-     }
-   }
- }else{
-   alert("You are not old enough");
+ switch(favColor.toLowerCase()){
+  case "red" :
+    alert(`${username} red is dead!`);
+    break;
+  case "yellow" :
+    alert(`${username} yellow is the best!`);
+    break;
+  case "green" :
+    alert(`${username} green is mean!`);
+    break;
+  case "orange" :
+    alert(`${username} orange is for orangatangs!`);
+    break;
+  case "blue" :
+    alert(`${username} blue is for glue!`);
+    break;
+  case "pink" :
+    alert(`${username} you get a wink for pink!`);
+    break;
+  case "purple" :
+    alert(`${username} you are a purple people eater!`);
+    break;
+  case "black" :
+    alert(`${username} black is where it's at!`);
+    break;
+  case "white" :
+    alert(`${username} white is delightful!`);
+    break;
+  case "grey" :
+    alert(`${username} grey is boring, go to seattle!`);
+    break;
+
+  default:
+    alert(`${username} come on pick a real color!`);
  }

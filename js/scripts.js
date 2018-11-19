@@ -180,41 +180,125 @@
  //   alert("You are not old enough");
  // }
 
- const username = prompt("What is your name");
- const favColor = prompt("What is your favorite color?","red, yellow, orange, green, blue, pink, purple, black, white, or grey");
+ // const username = prompt("What is your name");
+ // const favColor = prompt("What is your favorite color?","red, yellow, orange, green, blue, pink, purple, black, white, or grey");
+ //
+ // switch(favColor.toLowerCase()){
+ //  case "red" :
+ //    alert(`${username} red is dead!`);
+ //    break;
+ //  case "yellow" :
+ //    alert(`${username} yellow is the best!`);
+ //    break;
+ //  case "green" :
+ //    alert(`${username} green is mean!`);
+ //    break;
+ //  case "orange" :
+ //    alert(`${username} orange is for orangatangs!`);
+ //    break;
+ //  case "blue" :
+ //    alert(`${username} blue is for glue!`);
+ //    break;
+ //  case "pink" :
+ //    alert(`${username} you get a wink for pink!`);
+ //    break;
+ //  case "purple" :
+ //    alert(`${username} you are a purple people eater!`);
+ //    break;
+ //  case "black" :
+ //    alert(`${username} black is where it's at!`);
+ //    break;
+ //  case "white" :
+ //    alert(`${username} white is delightful!`);
+ //    break;
+ //  case "grey" :
+ //    alert(`${username} grey is boring, go to seattle!`);
+ //    break;
+ //
+ //  default:
+ //    alert(`${username} come on pick a real color!`);
+ // }
 
- switch(favColor.toLowerCase()){
-  case "red" :
-    alert(`${username} red is dead!`);
-    break;
-  case "yellow" :
-    alert(`${username} yellow is the best!`);
-    break;
-  case "green" :
-    alert(`${username} green is mean!`);
-    break;
-  case "orange" :
-    alert(`${username} orange is for orangatangs!`);
-    break;
-  case "blue" :
-    alert(`${username} blue is for glue!`);
-    break;
-  case "pink" :
-    alert(`${username} you get a wink for pink!`);
-    break;
-  case "purple" :
-    alert(`${username} you are a purple people eater!`);
-    break;
-  case "black" :
-    alert(`${username} black is where it's at!`);
-    break;
-  case "white" :
-    alert(`${username} white is delightful!`);
-    break;
-  case "grey" :
-    alert(`${username} grey is boring, go to seattle!`);
-    break;
+// const myFirstArray = ["MIke", 25, true, "Fresno",["Bam", "Dave", "Patti"]];
+//
+// console.log(myFirstArray[4][2]);
+// const favMovie = "Batman";
+// const me = [favMovie, 9, false, 2000,]; //can take in variables as well
+// console.log(me);
+// console.log(me.length);
+// console.log(me[1]);
 
-  default:
-    alert(`${username} come on pick a real color!`);
- }
+const favMovie1 = ["Swiss Family", 1965];
+const favMovie2 = ["Tommy Boy", 1992];
+const favMovie3 = ["Indiana Jones", 1989];
+const favMovie4 = ["Rocky", 1985];
+const favMovie5 = ["Matrix", 2017];
+
+const movieArray = [favMovie1, favMovie2, favMovie3, favMovie4, favMovie5];
+// alert(movieArray);
+// const favMovieTitle = [favMovie1[0],favMovie2[0],favMovie3[0],favMovie4[0],favMovie5[0]];
+// let favHateArray = movieArray.slice[2];
+// favHateArray.push(movieArray.slice[3][0]);
+// console.log(favHateArray);
+// console.log(movieArray.length);
+for(let i =0; i < movieArray.length; i++){
+  if(movieArray[i][0] === "Rocky"){
+    alert(movieArray[i]);
+    break;
+  }
+}
+
+for(movie of movieArray){
+  
+  if(movie[0] === "Indiana Jones"){
+    alert(movie);
+  }
+}
+for(let i = 0; i <= 10; i++){
+  console.log(i);
+}
+
+// const names = ["Andy", "Adam", "Allan", "Alex"];
+// for(let i = 0; i< names.length; i++){
+//   console.log(names[i]);
+// }
+//
+// const albums = ["One", "22", "23"];
+// for(let i = 0; i < albums.length;i++){
+//   console.log(albums[i]);
+// }
+
+// for(let name of names){
+//   console.log(name);
+// }
+
+// names.forEach(name => console.log(name));
+//
+// names.map(name => console.log(name));
+//
+// for(let album of albums) {
+//   console.log(album);
+//   if(album === "22"){
+//     break;
+//   }
+// }
+//
+// const person = {
+//   name: "Mike",
+//   age: 36
+// }
+//
+// for( let key in person) {
+//   console.log(person[key]);
+// }
+// // don't use this very much
+//
+// console.log(person.name);
+//
+// const user = {};
+// console.log(user);
+// user.name = prompt('Give me your name');
+// user.age = +prompt('Give me your age');
+//
+// console.log(user);
+// console.log(user.name);

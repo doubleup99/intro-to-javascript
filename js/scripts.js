@@ -228,35 +228,35 @@
 // console.log(me.length);
 // console.log(me[1]);
 
-const favMovie1 = ["Swiss Family", 1965];
-const favMovie2 = ["Tommy Boy", 1992];
-const favMovie3 = ["Indiana Jones", 1989];
-const favMovie4 = ["Rocky", 1985];
-const favMovie5 = ["Matrix", 2017];
-
-const movieArray = [favMovie1, favMovie2, favMovie3, favMovie4, favMovie5];
-// alert(movieArray);
-// const favMovieTitle = [favMovie1[0],favMovie2[0],favMovie3[0],favMovie4[0],favMovie5[0]];
-// let favHateArray = movieArray.slice[2];
-// favHateArray.push(movieArray.slice[3][0]);
-// console.log(favHateArray);
-// console.log(movieArray.length);
-for(let i =0; i < movieArray.length; i++){
-  if(movieArray[i][0] === "Rocky"){
-    alert(movieArray[i]);
-    break;
-  }
-}
-
-for(movie of movieArray){
-  
-  if(movie[0] === "Indiana Jones"){
-    alert(movie);
-  }
-}
-for(let i = 0; i <= 10; i++){
-  console.log(i);
-}
+// const favMovie1 = ["Swiss Family", 1965];
+// const favMovie2 = ["Tommy Boy", 1992];
+// const favMovie3 = ["Indiana Jones", 1989];
+// const favMovie4 = ["Rocky", 1985];
+// const favMovie5 = ["Matrix", 2017];
+//
+// const movieArray = [favMovie1, favMovie2, favMovie3, favMovie4, favMovie5];
+// // alert(movieArray);
+// // const favMovieTitle = [favMovie1[0],favMovie2[0],favMovie3[0],favMovie4[0],favMovie5[0]];
+// // let favHateArray = movieArray.slice[2];
+// // favHateArray.push(movieArray.slice[3][0]);
+// // console.log(favHateArray);
+// // console.log(movieArray.length);
+// for(let i =0; i < movieArray.length; i++){
+//   if(movieArray[i][0] === "Rocky"){
+//     alert(movieArray[i]);
+//     break;
+//   }
+// }
+//
+// for(movie of movieArray){
+//
+//   if(movie[0] === "Indiana Jones"){
+//     alert(movie);
+//   }
+// }
+// for(let i = 0; i <= 10; i++){
+//   console.log(i);
+// }
 
 // const names = ["Andy", "Adam", "Allan", "Alex"];
 // for(let i = 0; i< names.length; i++){
@@ -302,3 +302,43 @@ for(let i = 0; i <= 10; i++){
 //
 // console.log(user);
 // console.log(user.name);
+
+const taskList = [];
+
+function addTask(){
+  const task = {};
+  task.item = prompt("What do you need to do this week?");
+  task.time = +prompt("How many hours does it take?");
+  taskList.push(task);
+}
+addTask();
+addTask();
+addTask();
+
+// for(let i = 0; i < taskList.length; i++){
+//   taskList[i].time = +prompt(`How many hours does it take to ${taskList[i]}`);
+// }
+// console.log(taskList);
+//
+// console.log(taskList[1]);
+// console.log(taskList[1].time);
+let counter = 0;
+let lrgTime = 0;
+let longItem = "";
+while (counter < taskList.length){
+  if(lrgTime < taskList[counter].time){
+    lrgTime = taskList[counter].time;
+    longItem = taskList[counter].item;
+  }
+  counter ++;
+}
+console.log(longItem);
+let easyArray = [];
+for (let i = 0; i < taskList.length; i++){
+  if (taskList[i].time !== lrgTime){
+    taskList[i].str = "easy-peasy";
+    easyArray.push(taskList[i].item);
+  }
+}
+// console.log(taskList);
+alert(easyArray);

@@ -486,33 +486,82 @@ console.log(cat.substr(2,1))
 //
 // getName();
 // console.log(typeof 4);
-function powerOf() {
-  const num = +prompt("GIve me a number and I will square it for you.");
-  // console.log( typeof num);
-  if(num){
-    alert(num * num);
-  }else {
-    alert("NaN");
-    return powerOf();
+// function powerOf() {
+//   const num = +prompt("GIve me a number and I will square it for you.");
+//   // console.log( typeof num);
+//   if(num){
+//     alert(num * num);
+//   }else {
+//     alert("NaN");
+//     return powerOf();
+//   }
+// }
+//
+// powerOf();
+//
+// // *Need to still work on this
+// function capFirstLetter(str) {
+//   str = prompt("Give me a string");
+//   if (str.charAt(str.length -1)==="."){
+//     console.log(str.charAt(0).toUpperCase() + str.slice(1));
+//   }else{
+//     console.log(str.charAt(0).toUpperCase() + str.slice(1)+".");
+//   }
+// }
+// capFirstLetter();
+//
+// function reorder(flip){
+//   flip = prompt("Give me a string and I will reorder it for you.");
+//   console.log(flip.substr(flip.length/2)+flip.substr(0,flip.length/2));
+// }
+//
+// reorder();
+
+// const body = document.getElementsByTagName("body");
+// const body1 = document.getElementsByClassName("blah");
+// const body2= document.getElementById("blahblah");
+//
+// function query(queryStr){
+//   console.log(document.querySelector(queryStr));
+// }
+// query("body");
+
+const header = document.querySelector("#header");
+console.log(header);
+
+header.addEventListener('click', event => header.style.color = 'blue');
+
+
+document.addEventListener('keydown', e => {
+  console.log(event);
+  if(e.key === "Enter"){
+    console.log("You hit the enter key.");
   }
+  header.style.color = "tomato"
+});
+
+const button = document.querySelector("#btn");
+const div = document.querySelector("#div");
+const anywhere = document.querySelector("html");
+
+button.addEventListener("click", event => alert("you clicked it"));
+div.addEventListener("mouseenter", event => div.style.backgroundColor = "red");
+document.addEventListener("keyup", event => div.style.backgroundColor = "green");
+// document.addEventListener("click", event => window.location.assign("https://www.google.com"));
+
+
+const buttons = document.querySelectorAll('button');
+
+for(let button of buttons){
+  button.addEventListener('click', () => console.log(event));
+  button.addEventListener('click', () => console.log(event.target.innerText));
+  button.addEventListener('click', () => someFunction());
 }
 
-powerOf();
-
-// *Need to still work on this
-function capFirstLetter(str) {
-  str = prompt("Give me a string");
-  if (str.charAt(str.length -1)==="."){
-    console.log(str.charAt(0).toUpperCase() + str.slice(1));
-  }else{
-    console.log(str.charAt(0).toUpperCase() + str.slice(1)+".");
-  }
+function someFunction() {
+  alert("fdasfasdf");
 }
-capFirstLetter();
-
-function reorder(flip){
-  flip = prompt("Give me a string and I will reorder it for you.");
-  console.log(flip.substr(flip.length/2)+flip.substr(0,flip.length/2));
-}
-
-reorder();
+// // this is one way to use the queryselct all because you have to loop through all the buttons in order for selectorall to work
+// buttons.forEach(button => button.addEventListener('click', () => alert('clicked')));
+// most common way but more compact
+// you can't do this because it is selector all**  buttons.addEventListener('click', () => alert('you clicked me'));

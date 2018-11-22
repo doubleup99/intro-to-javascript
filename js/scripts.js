@@ -303,42 +303,216 @@
 // console.log(user);
 // console.log(user.name);
 
-const taskList = [];
-
-function addTask(){
-  const task = {};
-  task.item = prompt("What do you need to do this week?");
-  task.time = +prompt("How many hours does it take?");
-  taskList.push(task);
-}
-addTask();
-addTask();
-addTask();
+// const taskList = [];
+//
+// function addTask(){
+//   const task = {};
+//   task.item = prompt("What do you need to do this week?");
+//   task.time = +prompt("How many hours does it take?");
+//   taskList.push(task);
+// }
+// addTask();
+// addTask();
+// addTask();
 
 // for(let i = 0; i < taskList.length; i++){
 //   taskList[i].time = +prompt(`How many hours does it take to ${taskList[i]}`);
 // }
 // console.log(taskList);
+// //
+// // console.log(taskList[1]);
+// // console.log(taskList[1].time);
+// let counter = 0;
+// let lrgTime = 0;
+// let longItem = "";
+// while (counter < taskList.length){
+//   if(lrgTime < taskList[counter].time){
+//     lrgTime = taskList[counter].time;
+//     longItem = taskList[counter].item;
+//   }
+//   counter ++;
+// }
+// console.log(longItem);
+// let easyArray = [];
+// for (let i = 0; i < taskList.length; i++){
+//   if (taskList[i].time !== lrgTime){
+//     taskList[i].str = "easy-peasy";
+//     easyArray.push(taskList[i].item);
+//   }
+// }
+// // console.log(taskList);
+// alert(easyArray);
+
+// const leastFavoriteTeams = ['Yankees', 'Real Madrid', 'Patriots', 'Alabama'];
 //
-// console.log(taskList[1]);
-// console.log(taskList[1].time);
-let counter = 0;
-let lrgTime = 0;
-let longItem = "";
-while (counter < taskList.length){
-  if(lrgTime < taskList[counter].time){
-    lrgTime = taskList[counter].time;
-    longItem = taskList[counter].item;
-  }
-  counter ++;
+//
+// leastFavoriteTeams.unshift("Lakers");
+// leastFavoriteTeams.push("Ohio State");
+// leastFavoriteTeams.splice(leastFavoriteTeams.indexOf("Patriots"),1);
+// leastFavoriteTeams.unshift("Patriots");
+// console.log(leastFavoriteTeams);
+//can possibly chain them together
+/**
+
+* 1) Add 'Lakers' to the front of the leastFavoriteTeams array
+
+* 2) Add 'Ohio State' to the back of the leastFavoriteTeams array
+
+* 3) Remove 'Patriots' from the leastFavoriteTeams array
+
+* 4) Add 'Patriots' back to the beginning of the leastFavoriteTeams array
+
+* 5) Console log the array to see if you did everything right
+
+*
+
+* -> ['Patriots', 'Lakers', 'Yankees', 'Real Madrid', 'Alabama', 'Ohio State']
+
+*/
+
+
+
+// const heroes = ['Drow', 'Phantom Lancer', 'Invoker'];
+//
+// heroes.reverse();
+// heroes.splice(2,0,"Ember Spirit");
+// heroes.pop();
+// heroes.shift();
+// heroes.unshift("Shadow Fiend");
+// console.log(heroes);
+
+/**
+
+* 1) Reverse the heroes array
+
+* 2) Add 'Ember Spirit' after the first index of the heroes array
+
+* 3) Remove the last member of the heroes array
+
+* 4) Remove the first item of the heroes array
+
+* 5) Add 'Shadow Fiend' to the beginning of the heroes array
+
+* 6) Console log the array to see if you did everything right
+
+*
+
+* -> ['Shadow Fiend', 'Phantom Lancer', 'Ember Spirit']
+
+*/
+
+
+
+
+function logSomething(){
+  const name = "MIke";
+  console.log(name);
 }
-console.log(longItem);
-let easyArray = [];
-for (let i = 0; i < taskList.length; i++){
-  if (taskList[i].time !== lrgTime){
-    taskList[i].str = "easy-peasy";
-    easyArray.push(taskList[i].item);
+
+logSomething();
+console.log(name)
+
+//
+// function add(a, b) {
+//   console.log(a + b);
+// }
+//
+// function subtract(a, b) {
+//   console.log(a- b);
+// }
+// add(2,2);
+// subtract(3,1);
+
+
+const add = (a ,b) => {
+  console.log(a + b);
+}
+
+add(3232, 5454);
+
+const sayName = name => {
+  console.log(name);
+}
+
+sayName('fido');
+
+const cat = "Tasha";
+
+console.log(cat.substr(2,1))
+
+// function dogAge(age) {
+//   age = +prompt("How old is your dog?");
+//   alert(age * 7);
+// }
+//
+// dogAge();
+
+// function lifetimeSupply(ageNow, productPerDay, maxAge) {
+//   alert(productPerDay * 365 * (maxAge - ageNow));
+// }
+// lifetimeSupply(35,2,85);
+
+// function baseballTeamNow(hometown, weatherEvent, animalName) {
+//   homeTown = prompt("What is your hometown");
+//   weatherEvent = prompt("What is the weather event");
+//   animalName = prompt("WHat is your animal name");
+//   alert(homeTown + weatherEvent + animalName);
+//
+// }
+//
+// baseballTeamNow();
+
+// class Person {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//
+//   sayName() {
+//     console.log(this.name);
+//   }
+// }
+//
+// const mike = new Person("Mike");
+//
+// console.log(mike.sayName());
+
+// function getName() {
+//   const name = prompt("What is your name");
+//   if(!name) {
+//     getName();
+//   }
+//   console.log(name);
+// }
+//
+// getName();
+// console.log(typeof 4);
+function powerOf() {
+  const num = +prompt("GIve me a number and I will square it for you.");
+  // console.log( typeof num);
+  if(num){
+    alert(num * num);
+  }else {
+    alert("NaN");
+    return powerOf();
   }
 }
-// console.log(taskList);
-alert(easyArray);
+
+powerOf();
+
+// *Need to still work on this
+function capFirstLetter(str) {
+  str = prompt("Give me a string");
+  if (str.charAt(str.length -1)==="."){
+    console.log(str.charAt(0).toUpperCase() + str.slice(1));
+  }else{
+    console.log(str.charAt(0).toUpperCase() + str.slice(1)+".");
+  }
+}
+capFirstLetter();
+
+function reorder(flip){
+  flip = prompt("Give me a string and I will reorder it for you.");
+  console.log(flip.substr(flip.length/2)+flip.substr(0,flip.length/2));
+}
+
+reorder();

@@ -314,7 +314,7 @@
 // addTask();
 // addTask();
 // addTask();
-
+//
 // for(let i = 0; i < taskList.length; i++){
 //   taskList[i].time = +prompt(`How many hours does it take to ${taskList[i]}`);
 // }
@@ -496,10 +496,10 @@ console.log(cat.substr(2,1))
 //     return powerOf();
 //   }
 // }
-//
+
 // powerOf();
-//
-// // *Need to still work on this
+// //
+// // // *Need to still work on this
 // function capFirstLetter(str) {
 //   str = prompt("Give me a string");
 //   if (str.charAt(str.length -1)==="."){
@@ -526,42 +526,73 @@ console.log(cat.substr(2,1))
 // }
 // query("body");
 
-const header = document.querySelector("#header");
-console.log(header);
-
-header.addEventListener('click', event => header.style.color = 'blue');
-
-
-document.addEventListener('keydown', e => {
-  console.log(event);
-  if(e.key === "Enter"){
-    console.log("You hit the enter key.");
-  }
-  header.style.color = "tomato"
-});
-
-const button = document.querySelector("#btn");
-const div = document.querySelector("#div");
-const anywhere = document.querySelector("html");
-
-button.addEventListener("click", event => alert("you clicked it"));
-div.addEventListener("mouseenter", event => div.style.backgroundColor = "red");
-document.addEventListener("keyup", event => div.style.backgroundColor = "green");
-// document.addEventListener("click", event => window.location.assign("https://www.google.com"));
-
-
-const buttons = document.querySelectorAll('button');
-
-for(let button of buttons){
-  button.addEventListener('click', () => console.log(event));
-  button.addEventListener('click', () => console.log(event.target.innerText));
-  button.addEventListener('click', () => someFunction());
-}
-
-function someFunction() {
-  alert("fdasfasdf");
-}
+// const header = document.querySelector("#header");
+// console.log(header);
+//
+// header.addEventListener('click', event => header.style.color = 'blue');
+//
+//
+// document.addEventListener('keydown', e => {
+//   console.log(e);
+//   if(e.key === "Enter"){
+//     console.log("You hit the enter key.");
+//   }
+//   header.style.color = "tomato";
+// });
+//
+// const button = document.querySelector("#btn");
+// const div = document.querySelector("#div");
+// const anywhere = document.querySelector("html");
+//
+// button.addEventListener("click", event => alert("you clicked it"));
+// div.addEventListener("mouseenter", event => div.style.backgroundColor = "red");
+// document.addEventListener("keyup", event => div.style.backgroundColor = "green");
+// // document.addEventListener("click", event => window.location.assign("https://www.google.com"));
+//
+//
+// const buttons = document.querySelectorAll('button');
+//
+// for(let button of buttons){
+//   button.addEventListener('click', () => console.log(event));
+//   button.addEventListener('click', () => console.log(event.target.innerText));
+//   button.addEventListener('click', () => someFunction());
+// }
+//
+// function someFunction() {
+//   alert("fdasfasdf");
+// }
 // // this is one way to use the queryselct all because you have to loop through all the buttons in order for selectorall to work
 // buttons.forEach(button => button.addEventListener('click', () => alert('clicked')));
 // most common way but more compact
 // you can't do this because it is selector all**  buttons.addEventListener('click', () => alert('you clicked me'));
+
+const btnConvert = document.querySelector("#btnConvert");
+const inputFarenheit = document.querySelector("#inputFarenheit");
+const inputCelcius = document.querySelector("#inputCelcius");
+const btnClear = document.querySelector("#btnClear");
+function farenheitToCelcius(farenheit){
+  return Math.round((farenheit - 32 ) * 5/9);
+};
+
+function celciusToFarenheit(celcius){
+  return Math.round(celcius * 9/5 + 32);
+}
+
+function clearValues(){
+  inputCelcius.value = 0;
+  inputFarenheit.value = 0;
+}
+
+btnConvert.addEventListener("click", event => {
+  if(inputFarenheit.value>0 && inputCelcius.value>0){
+    alert("You can only fill one value at a time");
+  }else if(inputFarenheit.value>0){
+    inputCelcius.value = farenheitToCelcius(inputFarenheit.value);
+  }else if(inputCelcius.value>0){
+    inputFarenheit.value = celciusToFarenheit(inputCelcius.value);
+  }else {
+    alert("No values Entered");
+  };
+});
+
+btnClear.addEventListener("click", event => clearValues());

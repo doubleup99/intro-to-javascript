@@ -1,0 +1,11 @@
+.inline-text {
+  float: left;
+  width : 16.5%;
+  padding: 2px;
+  margin : 2px;
+}
+
+.convert {
+  float: left;
+  clear:both;
+}

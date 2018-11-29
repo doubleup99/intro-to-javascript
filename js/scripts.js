@@ -106,6 +106,8 @@
 // if the number is multiple of 3 aka modulo 3
 // if number is multiple of 5 log Buzz
 // if neither log the number
+
+
 // const script = document.querySelector('script');
 //
 // function fizzBuzz(min,max){
@@ -131,25 +133,149 @@
 //
 // fizzBuzz(0,100);
 
-const button = document.querySelector("#button");
-button.addEventListener("click", ()=> {
-  const titleText = prompt("Enter a title");
-  const title = document.createElement('h1');
+// const button = document.querySelector("#button");
+// button.addEventListener("click", ()=> {
+//   const titleText = prompt("Enter a title");
+//   const title = document.createElement('h1');
+//
+//   title.textContent = titleText;
+//   title.className = "col-md-6 offset-md-4";
+//   title.className = "text-center";
+//   document.body.appendChild(title);
+// })
+// const pText = prompt("Write a few sentences");
+// const p = document.createElement('p');
+// p.className = "text-justify";
+// p.textContent = pText;
+// document.body.appendChild(p);
+//
+//
+//
+// const input = document.querySelector("#input");
+// input.addEventListener("change", ()=>{
+//     p.style.background = input.value;
+// })
 
-  title.textContent = titleText;
-  title.className = "col-md-6 offset-md-4";
-  title.className = "text-center";
-  document.body.appendChild(title);
-})
-const pText = prompt("Write a few sentences");
-const p = document.createElement('p');
-p.className = "text-justify";
-p.textContent = pText;
-document.body.appendChild(p);
+// console.log(document.forms.loginForm.button);
+//
+// const btn = document.forms.loginForm.button;
+//
+// btn.addEventListener('click', e =>{
+//   let firstName = document.forms.loginForm.firstName;
+//   e.preventDefault();
+//   console.log(firstName.value);
+//   console.log('clicked');
+//   firstName.value = "";
+// })
 
 
+// javascript this**
+// const person = {
+//   firstName: 'Mike',
+//   lastName:'Ward',
+//   age: 36,
+//   wife: {
+//     firstName: 'Brit',
+//     lastName:'Ward',
+//     age:29,
+//     howOld(){
+//       console.log(`${this.firstName} ${this.lastName} is:${this.age} years old`);
+//     }
+//   },
+//   howOld(){
+//     console.log(`${this.firstName} ${this.lastName} is:${this.age} years old`);
+//   }
+// }
+//
+//
+// person.howOld();
+// person.wife.howOld();
+//
+// const btn1 = document.querySelector('#btn1');
+// const btn2 = document.querySelector('#btn2');
 
-const input = document.querySelector("#input");
-input.addEventListener("change", ()=>{
-    p.style.background = input.value;
-})
+// btn1.addEventListener('click', logThis);
+// btn2.addEventListener('click', logThis);
+//
+// function logThis(){
+//   console.log(this);
+// };
+
+// btn1.addEventListener('click', function(){
+//   console.log(this);
+// });
+// btn1.addEventListener('click', ()=>{
+//   // this.parentElement.style.display='none';
+//   console.log(this);
+// })
+//
+// btn2.addEventListener('click', function(){
+//   console.log(this);
+// })
+
+const buttons = document.querySelectorAll('button');
+console.log('buttons', buttons);
+
+// buttons.forEach(button => button.addEventListener('click', function() {
+//   this.style.display = 'none';
+// }));
+
+// for(button of buttons){
+//   button.addEventListener('click', function() {
+//     this.style.display = 'none';
+//   });
+// };
+//
+// const dog = {
+//   name: "Kylee",
+//   says: "WOof"
+// }
+//
+// const cat = {
+//   name: "Tash",
+//   says: "meow"
+// }
+//
+// const baldEagle = {
+//   name: "Freedom",
+//   says: "Baaakaaa"
+// }
+//
+// // function speak(location, status) {
+// //   alert(`${this.name} says: ${this.says} from ${location} and looks ${status}`);
+// // }
+// //
+// // speak.call(dog, "The Yard", 'because it is hungry');
+// // speak.apply(cat, ["the couch", "tired"]);
+// // speak.call(baldEagle, "the epic mountainside", "majestic");
+//
+//
+// function speak() {
+//   alert(`${this.name} says: ${this.says}`);
+// }
+//
+// const dogSays = speak.bind(dog);
+// dogSays();
+//
+// const catSays = speak.bind(cat);
+// catSays();
+//
+// const baldEagleSays = speak.bind(baldEagle);
+// baldEagleSays();
+
+class Person {
+  constructor(name, age, favColor){
+    this.name = name;
+    this.age = age;
+    this.favColor = favColor;
+  }
+
+  sayName() {
+    console.log(this.name);
+  }
+}
+
+const ben = new Person("Ben", 25, "Pink");
+const david = new Person("David", 34, "Blue");
+ben.sayName();
+david.sayName();

@@ -213,8 +213,8 @@
 //   console.log(this);
 // })
 
-const buttons = document.querySelectorAll('button');
-console.log('buttons', buttons);
+// const buttons = document.querySelectorAll('button');
+// console.log('buttons', buttons);
 
 // buttons.forEach(button => button.addEventListener('click', function() {
 //   this.style.display = 'none';
@@ -263,19 +263,157 @@ console.log('buttons', buttons);
 // const baldEagleSays = speak.bind(baldEagle);
 // baldEagleSays();
 
-class Person {
-  constructor(name, age, favColor){
-    this.name = name;
-    this.age = age;
-    this.favColor = favColor;
-  }
+// class Person {
+//   constructor(name, age, favColor){
+//     this.name = name;
+//     this.age = age;
+//     this.favColor = favColor;
+//   }
+//
+//   sayName() {
+//     console.log(this.name);
+//   }
+// }
+//
+// const ben = new Person("Ben", 25, "Pink");
+// const david = new Person("David", 34, "Blue");
+// ben.sayName();
+// david.sayName();
 
-  sayName() {
-    console.log(this.name);
+// const str = new String('Ben');
+// console.log(str);
+//
+// console.log(Object.getPrototypeOf(42));
+//
+// const arr = new Array('Ben', 35);
+// console.log(arr);
+//
+// const num = new Number(42);
+// console.log(num);
+//
+// const bool = new Boolean(true);
+// console.log(bool);
+//
+// const person = {
+//   name: "Billy Bob"
+// }
+//
+// console.log(person);
+//
+// const dog = new Object();
+// dog.name = "fido";
+// console.log(dog);
+//
+// const num2 = 43;
+// console.log(num2);
+
+
+// the old way constructor function cpaital is common like String above
+function Animal(name, energy){
+  this.name = name;
+  this.energy = energy;
+
+  this.play = function() {
+    this.energy -= 5;
   }
 }
 
-const ben = new Person("Ben", 25, "Pink");
-const david = new Person("David", 34, "Blue");
-ben.sayName();
-david.sayName();
+Animal.prototype.eat = function(){
+  this.energy += 10
+}
+
+const dog = new Animal('dog', 40);
+const cat = new Animal('Cat', 5);
+
+dog.fetch = function(){
+  this.energy += 10;
+}
+
+
+console.log(dog);
+console.log(dog.name);
+console.log(dog.energy);
+dog.play();
+console.log(dog.energy);
+dog.eat();
+console.log(dog.energy);
+console.log(cat);
+dog.fetch();
+console.log(dog.energy);
+// function Todo(text, isDone) {
+//   this.edit = function(){
+//
+//   }
+// }
+
+// // my way to do the assignment
+// const User = function(username, password){
+//   this.username = username;
+//   this.password = password;
+// }
+//
+// function newUser(){
+//   const uname = prompt('what is your username');
+//   const pword = prompt('what is your password');
+//   const newUser = new User(uname, pword);
+//   console.log(newUser);
+// }
+//
+// newUser();
+
+
+
+// // teaches way
+//
+//
+// function User(){
+//
+//   this.getStuff = function(){
+//     this.getName();
+//     this.getPassword();
+//   }
+//   this.getName = function(){
+//     this.name = prompt('n');
+//   }
+//   this.getPassword = function(){
+//     this.password = prompt('p');
+//   }
+// }
+//
+// const ben = new User();
+// ben.getStuff();
+//
+// console.log(ben);
+
+
+
+// classes: New way to construct objects
+
+class AnimalNew {
+  constructor(name, energy){
+    this.name = name;
+    this.energy = energy;
+  }
+  play(){
+    this.energy -=5;
+  }
+}
+
+class Dog extends AnimalNew {
+  constructor(name, energy, says){
+    super(...arguments);
+    // this will call the other arguments from parent class just like
+    // this.name = name;
+    // this.energy = energy;
+
+    this.says = says;
+  }
+
+  speak(){
+    console.log(`Dog says ${this.says}`);
+  }
+}
+
+const fido = new Dog('fido', 40, 'woof');
+fido.play();
+console.log(fido);

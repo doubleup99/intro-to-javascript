@@ -309,37 +309,37 @@
 
 
 // the old way constructor function cpaital is common like String above
-function Animal(name, energy){
-  this.name = name;
-  this.energy = energy;
-
-  this.play = function() {
-    this.energy -= 5;
-  }
-}
-
-Animal.prototype.eat = function(){
-  this.energy += 10
-}
-
-const dog = new Animal('dog', 40);
-const cat = new Animal('Cat', 5);
-
-dog.fetch = function(){
-  this.energy += 10;
-}
-
-
-console.log(dog);
-console.log(dog.name);
-console.log(dog.energy);
-dog.play();
-console.log(dog.energy);
-dog.eat();
-console.log(dog.energy);
-console.log(cat);
-dog.fetch();
-console.log(dog.energy);
+// function Animal(name, energy){
+//   this.name = name;
+//   this.energy = energy;
+//
+//   this.play = function() {
+//     this.energy -= 5;
+//   }
+// }
+//
+// Animal.prototype.eat = function(){
+//   this.energy += 10
+// }
+//
+// const dog = new Animal('dog', 40);
+// const cat = new Animal('Cat', 5);
+//
+// dog.fetch = function(){
+//   this.energy += 10;
+// }
+//
+//
+// console.log(dog);
+// console.log(dog.name);
+// console.log(dog.energy);
+// dog.play();
+// console.log(dog.energy);
+// dog.eat();
+// console.log(dog.energy);
+// console.log(cat);
+// dog.fetch();
+// console.log(dog.energy);
 // function Todo(text, isDone) {
 //   this.edit = function(){
 //
@@ -389,31 +389,65 @@ console.log(dog.energy);
 
 // classes: New way to construct objects
 
-class AnimalNew {
-  constructor(name, energy){
-    this.name = name;
-    this.energy = energy;
-  }
-  play(){
-    this.energy -=5;
-  }
+// class AnimalNew {
+//   constructor(name, energy){
+//     this.name = name;
+//     this.energy = energy;
+//   }
+//   play(){
+//     this.energy -=5;
+//   }
+// }
+//
+// class Dog extends AnimalNew {
+//   constructor(name, energy, says){
+//     super(...arguments);
+//     // this will call the other arguments from parent class just like
+//     // this.name = name;
+//     // this.energy = energy;
+//
+//     this.says = says;
+//   }
+//
+//   speak(){
+//     console.log(`Dog says ${this.says}`);
+//   }
+// }
+//
+// const fido = new Dog('fido', 40, 'woof');
+// fido.play();
+// console.log(fido);
+
+// const newPrompt = +prompt("How much time would you like to wait in ms");
+//
+// const timer = setTimeout(quote, newPrompt);
+// const intervalPrompt = +prompt('How many times do you want the message to appear');
+// const setTime = setInterval(quote, intervalPrompt);
+//
+// function quote(){
+//   const random = alert(Math.random().toString(27).substring(2,15));
+// }
+//
+// function endQuote(){
+//   clearTimeout(timer);
+// }
+//
+// function myStopFunction(){
+//   clearInterval(setTime);
+// }
+
+const username = prompt('Enter your username');
+const password = prompt('What is your password');
+
+function mySetItem(){
+  localStorage.setItem('user', username);
+  localStorage.password = password;
 }
 
-class Dog extends AnimalNew {
-  constructor(name, energy, says){
-    super(...arguments);
-    // this will call the other arguments from parent class just like
-    // this.name = name;
-    // this.energy = energy;
-
-    this.says = says;
-  }
-
-  speak(){
-    console.log(`Dog says ${this.says}`);
-  }
+function myGetItem() {
+  const userValue = alert(localStorage.getItem('user'));
 }
 
-const fido = new Dog('fido', 40, 'woof');
-fido.play();
-console.log(fido);
+function myClearItem() {
+  localStorage.removeItem('user');
+}

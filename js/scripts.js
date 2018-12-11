@@ -436,18 +436,138 @@
 //   clearInterval(setTime);
 // }
 
-const username = prompt('Enter your username');
-const password = prompt('What is your password');
+// const username = prompt('Enter your username');
+// const password = prompt('What is your password');
+//
+// function mySetItem(){
+//   localStorage.setItem('user', username);
+//   localStorage.password = password;
+// }
+//
+// function myGetItem() {
+//   const userValue = alert(localStorage.getItem('user'));
+// }
+//
+// function myClearItem() {
+//   localStorage.removeItem('user');
+// }
 
-function mySetItem(){
-  localStorage.setItem('user', username);
-  localStorage.password = password;
+// function showMeClosure() {
+//         var bestNumber = 42;
+//
+//         function proveClosureExists() {
+//             console.log( bestNumber );
+//         };
+//
+//         return proveClosureExists;
+//     };
+//
+// var outsideScope = showMeClosure();
+// // you have to set the function equal to a new variable in order to access the value in the funciton
+//
+// outsideScope();
+//
+// function someFn(name, age, ...otherArgs){
+//   console.log(name);
+//   console.log(arguments);
+//   otherArgs.forEach(a => console.log(a));
+// }
+//
+// someFn("Mike", 35, "Purple", true);
+//
+//
+// const arr1 = [1, 2, 3];
+// const arr2 = [4, 5, 6];
+//
+// //want to combine them together [1 ,2, 3, 4, 5, 6]
+//
+// console.log([...arr1, ...arr2]);
+//
+// //or you can inject them whaerever you want in an Array
+//
+// console.log(['Ben', 46, ...arr1, true, 'CAT', ...arr2, false]);
+//
+// // the ... allows you to grab everything from in an Array
+
+//destructuring
+
+// const todoList = ['Dishes', 'mow lawn', 'put up christmas tree'];
+//
+// console.log(todoList);
+// //old way
+// const firstItem = todoList[0];
+// const secondItem = todoList[1];
+//
+// // destructuring way
+// const [firstItem] = todoList;
+// const [firstItem, ...theRest] = todoList;
+// console.log(firstItem);
+// console.log(theRest);
+
+// const person = [
+//   name : 'Mike',
+//   age:36,
+//   wife: {
+//     name:'Brit',
+//     age:29
+//   }
+// ]
+//
+// // const {name: banana = 'John Doe'} = person;
+// // // looks for the ben in the object person and then the colon is if you want to rename the key
+// // // it also can assign a default value if there if it doesn't find one
+// // console.log(ben);
+//
+// //If you wanna get wifes Name
+//
+// const {name} = person.wife;
+// console.log(name);
+
+//JSON
+//promises
+// function getAllCharacters(url) {
+// fetch(url)
+//   .then(response => response.json())
+//   .then(data => {
+//     const pagination = data.info.next;
+//     if (pagination){
+//       getAllCharacters(pagination);
+//     }
+//     makeCard(data);
+//   })
+//   .catch(error => console.log(error));
+// }
+
+//async and await
+async function getAllCharacters(url) {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    const pagination = data.info.next;
+    if( pagination) {getAllCharacters(pagination)};
+    makeCard(data);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-function myGetItem() {
-  const userValue = alert(localStorage.getItem('user'));
-}
+getAllCharacters("https://rickandmortyapi.com/api/character/");
 
-function myClearItem() {
-  localStorage.removeItem('user');
+function makeCard(data) {
+  // count characters = data.results
+  const { results: characters} = data;
+  characters.forEach(character => {
+    const card = document.createElement('div');
+    card.classLIst = 'card';
+    card.innerHTML = `
+      <img class = "card-img-top" src = "${character.image}">
+      <div class = "card-body">
+        <h2 class = "card-title">${character.name}</h2>
+        <p class = "card-text">Species: ${character.species}</P>
+        <p class = "card-text">Location: ${character.location.image}</P>
+
+      </div>
+    `;
+    document.body.append(card);
+  })
 }
